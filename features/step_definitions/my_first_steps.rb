@@ -1,7 +1,12 @@
 # encoding: UTF-8
+require 'capybara/cucumber'
+require 'capybara/mechanize'
+
+Capybara.default_driver = :mechanize
+Capybara.app = true
 
 假如(/^我打开了 URL "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  visit arg1
 end
 
 那么(/^我会看到页面的链接为 "(.*?)"$/) do |arg1|
