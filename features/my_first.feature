@@ -24,3 +24,4 @@
     并且我点击了 id 为 "wp-submit" 的按钮
     那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
     并且我会看到页面的链接为 "http://atdd.local/wp-login.php"
+    并且我会看到页面上的文本 "ERROR: Invalid username."

@@ -24,3 +24,7 @@ end
 当(/^我点击了 id 为 "(.*?)" 的按钮$/) do |arg1|
   click_on arg1
 end
+
+那么(/^我会看到页面上的文本 "(.*?)"$/) do |arg1|
+  expect(page).to have_content(arg1)
+end
