@@ -20,3 +20,7 @@
     并且我点击了 "Log out"
     当我打开了 URL "http://atdd.local/learning-objectives/"
     那么我不会看到评论 "test123456"
+
+    假如批准了评论 "test123456"
+    当我打开了 URL "http://atdd.local/learning-objectives/"
+    那么我会看到评论 "test123456"

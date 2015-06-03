@@ -12,3 +12,7 @@ end
 那么(/^我不会看到评论 "(.*?)"$/) do |arg1|
   expect(page).to have_no_content("#{arg1}|#{@current_time}")
 end
+
+假如(/^批准了评论 "(.*?)"$/) do |arg1|
+  %x[wp comment approve $(wp comment list --format=ids --search="#{arg1}|#{@current_time}")]
+end
