@@ -10,11 +10,11 @@ Capybara.app = true
 end
 
 那么(/^我会看到页面的链接为 "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  expect(current_url).to eq(arg1)
 end
 
 那么(/^我会看到页面的标题为 "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  expect(title).to eq(arg1)
 end
 
 当(/^我在 id 为 "(.*?)" 文本框里输入 "(.*?)"$/) do |arg1, arg2|
