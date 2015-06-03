@@ -30,6 +30,12 @@
     并且我会看到页面的链接为 "http://atdd.local/wp-login.php"
     并且我会看到页面上的文本 "ERROR: The password field is empty."
 
+    当我在 id 为 "user_login" 文本框里输入 "    "
+    并且我在 id 为 "user_pass" 文本框里输入 "   "
+    并且我点击了 id 为 "wp-submit" 的按钮
+    那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
+    并且我会看到页面的链接为 "http://atdd.local/wp-login.php"
+
     当我在 id 为 "user_login" 文本框里输入 "odd-e"
     并且我在 id 为 "user_pass" 文本框里输入 "bar"
     并且我点击了 id 为 "wp-submit" 的按钮
@@ -38,6 +44,20 @@
     并且我会看到页面上的文本 "ERROR: The password you entered for the username odd-e is incorrect."
 
     当我在 id 为 "user_login" 文本框里输入 "foo"
+    并且我在 id 为 "user_pass" 文本框里输入 "bar"
+    并且我点击了 id 为 "wp-submit" 的按钮
+    那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
+    并且我会看到页面的链接为 "http://atdd.local/wp-login.php"
+    并且我会看到页面上的文本 "ERROR: Invalid username."
+
+    当我在 id 为 "user_login" 文本框里输入 "' or '1'='1"
+    并且我在 id 为 "user_pass" 文本框里输入 "bar"
+    并且我点击了 id 为 "wp-submit" 的按钮
+    那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
+    并且我会看到页面的链接为 "http://atdd.local/wp-login.php"
+    并且我会看到页面上的文本 "ERROR: Invalid username."
+
+    当我在 id 为 "user_login" 文本框里输入 "<script> %^&*"
     并且我在 id 为 "user_pass" 文本框里输入 "bar"
     并且我点击了 id 为 "wp-submit" 的按钮
     那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
