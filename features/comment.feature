@@ -12,7 +12,7 @@
     并且我点击了 id 为 "wp-submit" 的按钮
 
     当我打开了 URL "http://atdd.local/learning-objectives/"
-    并且我在 id 为 "comment" 文本框里输入 "test12345"
+    并且我在评论文本框里输入 "test123456"
     并且我点击了 "Post Comment"
 
-    那么我会看到 "test12345"
+    那么我会看到评论 "test123456"
