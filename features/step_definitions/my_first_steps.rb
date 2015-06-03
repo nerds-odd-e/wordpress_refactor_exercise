@@ -18,9 +18,9 @@ end
 end
 
 当(/^我在 id 为 "(.*?)" 文本框里输入 "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+  fill_in arg1, with: arg2
 end
 
 当(/^我点击了 id 为 "(.*?)" 的按钮$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  click_on arg1
 end
