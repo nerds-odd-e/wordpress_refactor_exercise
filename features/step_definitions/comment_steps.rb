@@ -8,3 +8,7 @@ end
 那么(/^我会看到评论 "(.*?)"$/) do |arg1|
   step %Q[我会看到页面上的文本 "#{arg1}|#{@current_time}"]
 end
+
+那么(/^我不会看到评论 "(.*?)"$/) do |arg1|
+  expect(page).to have_no_content("#{arg1}|#{@current_time}")
+end

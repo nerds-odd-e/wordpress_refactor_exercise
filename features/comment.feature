@@ -16,3 +16,7 @@
     并且我点击了 "Post Comment"
 
     那么我会看到评论 "test123456"
+
+    并且我点击了 "Log out"
+    当我打开了 URL "http://atdd.local/learning-objectives/"
+    那么我不会看到评论 "test123456"
