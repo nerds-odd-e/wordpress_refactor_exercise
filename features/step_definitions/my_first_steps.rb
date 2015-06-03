@@ -28,3 +28,10 @@ end
 那么(/^我会看到页面上的文本 "(.*?)"$/) do |arg1|
   expect(page).to have_content(arg1)
 end
+
+当(/^我点击了 "(.*?)"$/) do |arg1|
+  click_on arg1
+end
+那么(/^我会看到 "(.*?)"$/) do |arg1|
+  step %Q[我会看到页面上的文本 "#{arg1}"]
+end
