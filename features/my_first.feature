@@ -20,6 +20,10 @@
     那么我会看到页面的链接为 "http://atdd.local/wp-login.php?redirect_to=http%3A%2F%2Fatdd.local%2Fwp-admin%2F&reauth=1"
     那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
 
+    并且我点击了 id 为 "wp-submit" 的按钮
+    那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
+    并且我会看到页面的链接为 "http://atdd.local/wp-login.php"
+
     当我在 id 为 "user_login" 文本框里输入 "odd-e"
     并且我点击了 id 为 "wp-submit" 的按钮
     那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
