@@ -7,7 +7,7 @@
 
   场景: 给文章提交评论
     假如我打开了 URL "http://atdd.local/wp-login.php"
-    当我在 id 为 "user_login" 文本框里输入 "tom"
+    当我在 id 为 "user_login" 文本框里输入 "marry"
     并且我在 id 为 "user_pass" 文本框里输入 "s3cr3t"
     并且我点击了 id 为 "wp-submit" 的按钮
 
