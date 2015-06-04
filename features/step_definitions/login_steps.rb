@@ -16,3 +16,8 @@ end
   expect(title).to eq("Dashboard ‹ Specification By Example Workshop — WordPress")
   %x[wp user delete #{@username} --yes]
 end
+
+那么(/^会因为密码错误而登录失败$/) do
+  expect(page).to have_content("ERROR: The password you entered for the username #{@username} is incorrect.")
+  %x[wp user delete #{@username} --yes]
+end
