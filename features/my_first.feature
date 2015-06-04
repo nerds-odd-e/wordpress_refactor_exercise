@@ -20,6 +20,14 @@
     当使用用户名 "jack" 和密码 "" 登录
     那么会因为没有填写密码而登录失败
 
+  场景大纲: 登录失败
+    当使用用户名 "<username>" 和密码 "<password>" 登录
+    那么会因为<错误原因>而登录失败
+    例子:
+      | username | password | 错误原因 |
+      | jack | wrong_pass | 密码错误 |
+      | jack | | 没有填写密码 |
+
   场景: 登录失败
     假如我打开了 URL "http://atdd.local/wp-admin/"
     那么我会看到页面的链接为 "http://atdd.local/wp-login.php?redirect_to=http%3A%2F%2Fatdd.local%2Fwp-admin%2F&reauth=1"
