@@ -21,3 +21,8 @@ end
   expect(page).to have_content("ERROR: The password you entered for the username #{@username} is incorrect.")
   %x[wp user delete #{@username} --yes]
 end
+
+那么(/^会因为没有填写密码而登录失败$/) do
+  expect(page).to have_content("ERROR: The password field is empty.")
+  %x[wp user delete #{@username} --yes]
+end
