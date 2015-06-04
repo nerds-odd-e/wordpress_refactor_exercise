@@ -19,6 +19,7 @@
       | username | password | 错误原因 |
       | jack | wrong_pass | 密码错误 |
       | jack | | 没有填写密码 |
+      | invalid_user | any_password | 无效的用户名 |
 
   场景: 登录失败
     假如我打开了 URL "http://atdd.local/wp-admin/"
