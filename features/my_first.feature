@@ -6,6 +6,11 @@
   我希望可以登录到管理后台
 
   场景: 成功登录
+    假如存在用户 "jack" 且他的密码是 "abc123"
+    当使用用户名 "jack" 和密码 "abc123" 登录
+    那么能够成功登录
+
+  场景: 成功登录
     假如我打开了 URL "http://atdd.local/wp-admin/"
     那么我会看到页面的链接为 "http://atdd.local/wp-login.php?redirect_to=http%3A%2F%2Fatdd.local%2Fwp-admin%2F&reauth=1"
     那么我会看到页面的标题为 "Specification By Example Workshop › Sign In"
