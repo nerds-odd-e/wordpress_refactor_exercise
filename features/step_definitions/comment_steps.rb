@@ -20,10 +20,6 @@ end
   delete_comment @post_id, @comment_content
 end
 
-def delete_comment post_id, comment_content
-  %x[wp comment delete "$(wp comment list --format=ids --post_id=#{post_id} --search="#{comment_content}")" --force]
-end
-
 当(/^这个评论被编辑审核通过$/) do
   %x[wp comment approve "$(wp comment list --format=ids --post_id=#{@post_id} --status=hold --search="#{@comment_content}")"]
 end

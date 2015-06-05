@@ -12,3 +12,7 @@ end
 def delete_user username
   %x[wp user delete #{username} --yes]
 end
+
+def delete_comment post_id, comment_content
+  %x[wp comment delete "$(wp comment list --format=ids --post_id=#{post_id} --search="#{comment_content}")" --force]
+end
