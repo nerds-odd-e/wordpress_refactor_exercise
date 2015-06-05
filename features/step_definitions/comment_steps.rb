@@ -24,7 +24,7 @@ end
 
 那么(/^这个评论将被其他人公开看到$/) do
   logout
-  visit "http://atdd.local/?p=9"
+  visit "/?p=9"
   expect(page).to have_content("a comment by subscriber")
   delete_comment @post_id, @comment_content
 end

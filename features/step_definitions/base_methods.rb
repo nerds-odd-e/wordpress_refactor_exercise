@@ -3,7 +3,7 @@ def create_user username, password
 end
 
 def login username, password
-  visit "http://atdd.local/wp-login.php"
+  visit "/wp-login.php"
   fill_in "user_login", with: username
   fill_in "user_pass", with: password
   click_on "Sign In"
@@ -26,7 +26,7 @@ def get_comment_id post_id, comment_content
 end
 
 def post_comment post_id, comment_content
-  visit "http://atdd.local/?p=#{post_id}"
+  visit "/?p=#{post_id}"
   fill_in "comment", with: comment_content
   click_on "Post Comment"
 end
