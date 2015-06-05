@@ -1,6 +1,7 @@
 # encoding: UTF-8
 # language: zh-CN
 
+@delete_user
 功能: 登录
   作为一个博客的站长
   我希望可以登录到管理后台
