@@ -22,7 +22,11 @@ end
 
 那么(/^能够成功登录$/) do
   expect(title).to eq("Dashboard ‹ Specification By Example Workshop — WordPress")
-  %x[wp user delete #{@username} --yes]
+  delete_user @username
+end
+
+def delete_user username
+  %x[wp user delete #{username} --yes]
 end
 
 那么(/^会因为密码错误而登录失败$/) do
