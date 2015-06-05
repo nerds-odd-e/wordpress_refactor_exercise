@@ -6,6 +6,10 @@
 end
 
 当(/^使用用户名 "(.*?)" 和密码 "(.*?)" 登录$/) do |username, password|
+  login username, password
+end
+
+def login username, password
   visit "http://atdd.local/wp-admin/"
   fill_in "user_login", with: username
   fill_in "user_pass", with: password
