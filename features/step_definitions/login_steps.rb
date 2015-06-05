@@ -14,17 +14,11 @@ end
   delete_user @username
 end
 
-那么(/^会因为密码错误而登录失败$/) do
-  expect(page).to have_content("ERROR: The password you entered for the username #{@username} is incorrect.")
-  delete_user @username
-end
-
-那么(/^会因为没有填写密码而登录失败$/) do
-  expect(page).to have_content("ERROR: The password field is empty.")
-  delete_user @username
-end
-
-那么(/^会因为无效的用户名而登录失败$/) do
-  expect(page).to have_content("ERROR: Invalid username.")
+那么(/^会因为(密码错误|没有填写密码|无效的用户名)而登录失败$/) do | error |
+  expect(page).to have_content({
+    "密码错误" => "ERROR: The password you entered for the username #{@username} is incorrect.",
+    "没有填写密码" => "ERROR: The password field is empty.",
+    "无效的用户名" => "ERROR: Invalid username."
+  }[error])
   delete_user @username
 end
