@@ -31,15 +31,15 @@ end
 
 那么(/^会因为密码错误而登录失败$/) do
   expect(page).to have_content("ERROR: The password you entered for the username #{@username} is incorrect.")
-  %x[wp user delete #{@username} --yes]
+  delete_user @username
 end
 
 那么(/^会因为没有填写密码而登录失败$/) do
   expect(page).to have_content("ERROR: The password field is empty.")
-  %x[wp user delete #{@username} --yes]
+  delete_user @username
 end
 
 那么(/^会因为无效的用户名而登录失败$/) do
   expect(page).to have_content("ERROR: Invalid username.")
-  %x[wp user delete #{@username} --yes]
+  delete_user @username
 end
