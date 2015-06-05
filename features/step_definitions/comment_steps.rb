@@ -1,11 +1,8 @@
 @current_time = ""
 
 当(/^普通用户提交了一个评论$/) do
-  visit "http://atdd.local/wp-login.php"
-  fill_in "user_login", with: "marry"
-  fill_in "user_pass", with: "s3cr3t"
-  click_on "Sign In"
-
+  login "marry", "s3cr3t"
+  
   visit "http://atdd.local/?p=9"
   fill_in "comment", with:"a comment by subscriber"
   click_on "Post Comment"
