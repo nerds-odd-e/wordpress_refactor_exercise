@@ -9,6 +9,10 @@ def login username, password
   click_on "Sign In"
 end
 
+def logout
+  click_on "Log out"
+end
+
 def delete_user username
   %x[wp user delete #{username} --yes]
 end
