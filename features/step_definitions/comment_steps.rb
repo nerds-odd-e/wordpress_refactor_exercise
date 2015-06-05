@@ -17,7 +17,11 @@ end
 那么(/^这个评论不会被其他人公开看到$/) do
   click_on "Log out"
   expect(page).to have_no_content("a comment by subscriber")
-  %x[wp comment delete "$(wp comment list --format=ids --post_id=#{@post_id} --status=hold --search="#{@comment_content}")" --force]
+  delete_comment @post_id, @comment_content
+end
+
+def delete_comment post_id, comment_content
+  %x[wp comment delete "$(wp comment list --format=ids --post_id=#{post_id} --search="#{comment_content}")" --force]
 end
 
 当(/^这个评论被编辑审核通过$/) do
@@ -28,5 +32,5 @@ end
   click_on "Log out"
   visit "http://atdd.local/?p=9"
   expect(page).to have_content("a comment by subscriber")
-  %x[wp comment delete "$(wp comment list --format=ids --post_id=#{@post_id} --search="#{@comment_content}")" --force]
+  delete_comment @post_id, @comment_content
 end
