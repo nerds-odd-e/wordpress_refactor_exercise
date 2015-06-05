@@ -1,5 +1,5 @@
 当(/^普通用户提交了一个评论$/) do
-  login "marry", "s3cr3t"
+  login "marry"
 
   @post_id = 9
   @comment_content = "a comment by subscriber"
