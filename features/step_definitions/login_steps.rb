@@ -1,8 +1,12 @@
 # encoding: UTF-8
 
-假如(/^存在用户 "(.*?)" 且他的密码是 "(.*?)"$/) do |arg1, arg2|
-  @username = arg1
-  %x[ wp user create "#{arg1}" "#{arg1}@chaifeng.com" --role=contributor --user_pass="#{arg2}" ]
+假如(/^存在用户 "(.*?)" 且他的密码是 "(.*?)"$/) do |username, password|
+  @username = username
+  create_user username, password
+end
+
+def create_user username, password
+  %x[ wp user create "#{username}" "#{username}@chaifeng.com" --role=contributor --user_pass="#{password}" ]
 end
 
 当(/^使用用户名 "(.*?)" 和密码 "(.*?)" 登录$/) do |username, password|
