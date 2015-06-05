@@ -36,5 +36,5 @@ end
 那么(/^这个评论不会被其他人公开看到$/) do
   click_on "Log out"
   expect(page).to have_no_content("a comment by subscriber")
-  #{}%x[wp comment delete "$(wp comment list --format=ids --post_id=9 --status=hold --search="a comment by subscriber")" --force]
+  %x[wp comment delete "$(wp comment list --format=ids --post_id=9 --status=hold --search="a comment by subscriber")" --force]
 end
