@@ -4,13 +4,11 @@
   @post_id = 9
   @comment_content = "a comment by subscriber"
 
-  visit "http://atdd.local/?p=#{@post_id}"
-  fill_in "comment", with: @comment_content
-  click_on "Post Comment"
+  post_comment @post_id, @comment_content
 end
 
 那么(/^这个评论将等待被审核$/) do
-  comment_ids = %x[wp comment list --format=ids --post_id=#{@post_id} --status=hold --search="#{@comment_content}"]
+  comment_ids = get_comment_id @post_id, @comment_content
   expect(comment_ids).not_to eq("")
 end
 

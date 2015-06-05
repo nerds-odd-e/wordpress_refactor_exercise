@@ -20,3 +20,13 @@ end
 def delete_comment post_id, comment_content
   %x[wp comment delete "$(wp comment list --format=ids --post_id=#{post_id} --search="#{comment_content}")" --force]
 end
+
+def get_comment_id post_id, comment_content
+  %x[wp comment list --format=ids --post_id=#{post_id} --status=hold --search="#{comment_content}"]
+end
+
+def post_comment post_id, comment_content
+  visit "http://atdd.local/?p=#{post_id}"
+  fill_in "comment", with: comment_content
+  click_on "Post Comment"
+end
