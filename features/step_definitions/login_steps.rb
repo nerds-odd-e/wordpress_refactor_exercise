@@ -5,10 +5,10 @@
   %x[ wp user create "#{arg1}" "#{arg1}@chaifeng.com" --role=contributor --user_pass="#{arg2}" ]
 end
 
-当(/^使用用户名 "(.*?)" 和密码 "(.*?)" 登录$/) do |arg1, arg2|
+当(/^使用用户名 "(.*?)" 和密码 "(.*?)" 登录$/) do |username, password|
   visit "http://atdd.local/wp-admin/"
-  fill_in "user_login", with: arg1
-  fill_in "user_pass", with: arg2
+  fill_in "user_login", with: username
+  fill_in "user_pass", with: password
   click_on "Sign In"
 end
 
