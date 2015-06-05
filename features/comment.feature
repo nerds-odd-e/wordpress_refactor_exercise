@@ -1,6 +1,7 @@
 # encoding: UTF-8
 # language: zh-CN
 
+@delete_comment
 功能: 评论审核
   作为一个博客的普通用户
   我希望可以给文章提交评论

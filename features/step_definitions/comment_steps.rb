@@ -1,3 +1,7 @@
+After('@delete_comment') do
+  delete_comment @post_id, @comment_content
+end
+
 当(/^普通用户提交了一个评论$/) do
   login "marry"
 
@@ -15,7 +19,6 @@ end
 那么(/^这个评论不会被其他人公开看到$/) do
   logout
   expect(page).to have_no_content("a comment by subscriber")
-  delete_comment @post_id, @comment_content
 end
 
 当(/^这个评论被编辑审核通过$/) do
@@ -26,5 +29,4 @@ end
   logout
   visit "/?p=9"
   expect(page).to have_content("a comment by subscriber")
-  delete_comment @post_id, @comment_content
 end
